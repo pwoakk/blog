@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>СПИСОК КНИГ</h1>
+
+    {% for book in book_list %}
+        <h3>{{book.name}}</h3>
+        <p>{{book.description}}</p>
+        <p>{{book.genre.name}}</p>
+        <a href="http://youtube.com">Ссылка на ютуб</a>
+        <br>
+        <a href="{% url 'book-detail-url' book.id %}">Ссылка на {{book.name}}</a>
+        <br>
+    {% endfor %}
+</body>
+</html>

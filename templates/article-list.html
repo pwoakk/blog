@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>СПИСОК ПУБЛИКАЦИЙ</h1>
+
+    {% for article in article_list %}
+        <h3>{{article.title}}</h3>
+        <p>{{article.description}}</p>
+        <p>{{article.category.title}}</p>
+        <a href="http://youtube.com">Ссылка на ютуб</a>
+        <br>
+        <a href="{% url 'article-detail-url' article.id %}">Ссылка на {{article.title}}</a>
+        <br>
+    {% endfor %}
+
+</body>
+</html>
